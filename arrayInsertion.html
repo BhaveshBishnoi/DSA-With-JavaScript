@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Insertion</title>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+.box{
+    width: 400px;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px ;    
+    text-align: center;
+    overflow: hidden;
+    color: aliceblue;
+}
+
+input{
+    padding: 10px;
+    margin: 8px;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+}
+label{
+    color: #fff;
+    margin: 8px auto 2px 10px;
+    text-align: left;
+}
+
+button{
+    height: 40px;
+    width: 80%;
+    margin: 10px auto;
+}
+h2{
+    color: azure;
+}
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="main">
+<div class="box">
+    <h2>Array Insertion</h2>
+    <label for="element">New Element</label>
+<input type="number" name="element" id="newElement" min="0" max="100"> <br>
+<label for="position">Position</label>
+<input type="number" name="position" id="position" min="0"> <br>
+<p>Previous Array <span id="prevArr"></span></p>
+<button onclick="addValue(position.value,newElement.value)">Add Now</button>
+
+
+<p id="output"> </p>
+</div>
+
+
+    </div>
+    
+
+    <script>
+        let arr = [1,2,45,65,43,63,83,53,7,32];
+        let newElement = document.getElementById('newElement');
+        let position = document.getElementById('position');
+        let output = document.getElementById('output')
+        let prevArr = document.getElementById('prevArr');
+        prevArr.innerText = `[${arr}]`
+        position.max = arr.length-1;
+        
+        function addValue(pos,ele){
+    
+            for(let i = arr.length-1; i>=0;i--){
+          
+            if(i>=pos){
+                arr[i+1] = arr[i]
+                if(i==pos){
+                    arr[pos]=ele;
+                    position.max = arr.length-1;
+                }
+                
+            }
+            console.log(pos,ele);
+            output.innerText = `New Array [${arr}]`
+        }
+        
+        }
+      
+    </script>
+</body>
+</html>
