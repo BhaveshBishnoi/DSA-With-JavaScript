@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traverse</title>
+</head>
+<body>
+    <p> let arr = [10,8,45,93,59,2,1,49,37,12,19]</p>
+<input type="number" min="0" id="input" onchange="changeit()"> <br> <br>
+<button onclick="getValue(input.value)">Search</button>
+
+<p id="output"> </p>
+
+    <script>
+
+        let arr = [10,8,45,93,59,2,1,49,37,12,19]
+        //----------Loop Array--------------
+        for(let i = 0;i<arr.length;i++){
+            // document.write(`Array ${i} is ${arr[i]} <br>`)
+        }
+// ---------------Input Box Assignment-------------
+
+let input = document.getElementById('input');
+let output  = document.getElementById('output')
+
+input.max= arr.length -1;
+
+function getValue(e){
+    let ans = arr[e]
+    output.innerText = ans
+}
+function changeit(){
+    output.innerText = '';
+}
+
+    </script>
+    
+</body>
+</html>
