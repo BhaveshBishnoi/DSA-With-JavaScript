@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Search Apear</title>
+</head>
+<body>
+    <div class="div">
+        <p>[10,30,39,10,39,28,93,84,47,39,39,27,29,9,10,39,28,93,84,47]</p>
+        <input type="number" min="0" max="100" id="fetch">
+        <button onclick="getVal()">Search It</button>
+        <p id="itemval"> </p>
+        <p id="itemval2"> </p>
+    </div>
+
+
+    <script>
+        let arr = [10,30,39,10,39,28,93,84,47,39,39,27,29,9,10,39,28,93,84,47]
+        let fetch = document.getElementById('fetch');
+        let itemVal = document.getElementById('itemval')
+        let itemVal2 = document.getElementById('itemval2')
+        let item = 0;
+        let position = []
+
+        function getVal(){
+            for (let i = 0; i < arr.length; i++) {
+            if(arr[i]==fetch.value){
+                item++;
+                itemVal.innerText = `Apear ${item} Times`;
+                position.push(i)
+                itemVal2.innerText = `On Position - ${position}`
+                console.log(position);
+            }
+            
+        }
+        item = 0;
+        }
+        
+        
+    </script>
+</body>
+</html>
