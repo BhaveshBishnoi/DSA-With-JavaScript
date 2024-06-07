@@ -1,5 +1,5 @@
 let str1 = 'hello';
-let str2 = 'ohell'
+let str2 = 'ohele'
 let strObj = {}
 
 function isStringAnagram(str1,str2){
@@ -11,6 +11,7 @@ if(str1.length == str2.length){
 
     for(i of str2){
         if(!strObj[i]){
+            console.log('This is not Anagram CN2');
             return 'This is not Anagram CN2';
         } else{
             strObj[i]--
@@ -20,6 +21,7 @@ if(str1.length == str2.length){
     }
     console.log('this is Anagram');
 }else{
+    console.log('This is not Anagram CN1');
     return 'This is not Anagram CN1'
 }
 
