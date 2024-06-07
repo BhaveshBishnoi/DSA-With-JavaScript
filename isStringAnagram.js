@@ -1,30 +1,26 @@
-let str1 = 'hello';
-let str2 = 'ohele'
-let strObj = {}
-
-function isStringAnagram(str1,str2){
-if(str1.length == str2.length){
-    for(i of str1){
-        strObj[i] = (strObj[i] || 0)+1;
+let str1='bhavesh';
+let str2 = 'bahvesh'
+let obj = {}
+let ans = true;
+function isAnagram(st1,st2){
+    if(st1.length != st2.length){
+        ans= false;
+        return;
     }
-    // console.log(strObj);
-
-    for(i of str2){
-        if(!strObj[i]){
-            console.log('This is not Anagram CN2');
-            return 'This is not Anagram CN2';
-        } else{
-            strObj[i]--
-            // console.log(strObj);
-            
-            }
+    for(i of st1){
+        obj[i]=(obj[i] || 0) +1 ;
+        
     }
-    console.log('this is Anagram');
-}else{
-    console.log('This is not Anagram CN1');
-    return 'This is not Anagram CN1'
-}
+    for(j of st2){
+        if(!obj[j]){
+            ans = false;
+            return;
+        }
+        obj[j]--;
+    }
 
 }
 
-isStringAnagram(str1, str2);
+isAnagram(str1,str2)
+console.log(ans);
+// console.log(obj);
